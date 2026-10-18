@@ -14,7 +14,7 @@ A lista não avalia normas técnicas, não gera nota e não certifica o estabele
 - style.css: aparência, Flexbox e adaptação ao celular.
 - script.js: leitura das caixas e montagem da resposta.
 - assets/acessibilidade.svg: ilustração local original.
-- GUIA-APRESENTACAO.md: roteiro para estudar e explicar o código.
+
 
 ## Requisitos da atividade mantidos
 
