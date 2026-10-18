@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso e Respeito - Acessibilidade em motéis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho e menu -->
+  <header>
+    <h1>Acesso e Respeito</h1>
+    <p>Acessibilidade em motéis: autonomia, privacidade e inclusão.</p>
+    <nav aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#verificacao">Lista educativa</a>
+      <a href="#informacoes">Saiba mais</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>Inclusão também faz parte da hospedagem</h2>
+      <div class="apresentacao">
+        <article>
+          <h3>Autonomia e privacidade para todos</h3>
+          <p>Pessoas com deficiência também frequentam motéis e devem ser tratadas com respeito. Barreiras nos espaços e na comunicação podem dificultar essa experiência.</p>
+          <p>Este projeto apresenta exemplos de recursos de acessibilidade e incentiva a conversa sobre um atendimento sem preconceitos.</p>
+          <ul>
+            <li>Fale diretamente com a pessoa, não apenas com seu acompanhante.</li>
+            <li>Pergunte antes de oferecer ajuda e respeite a resposta.</li>
+            <li>Informe com clareza os recursos disponíveis e suas limitações.</li>
+          </ul>
+        </article>
+        <img src="assets/acessibilidade.svg" alt="Ilustração de uma entrada ampla com símbolo de acessibilidade e uma mensagem de acolhimento." width="320" height="320">
+      </div>
+      <aside><strong>Lembrete:</strong> as necessidades variam de pessoa para pessoa. Ouvir o hóspede é parte de um atendimento respeitoso.</aside>
+    </section>
+
+    <section id="recursos">
+      <h2>O que observar no estabelecimento?</h2>
+      <table>
+        <caption>Exemplos educativos de barreiras e melhorias</caption>
+        <thead>
+          <tr><th scope="col">Área</th><th scope="col">Barreira</th><th scope="col">Exemplo de melhoria</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Entrada</th><td>Degraus no caminho</td><td>Rota acessível sem degraus ou com solução adequada de acesso.</td></tr>
+          <tr><th scope="row">Quarto</th><td>Móveis bloqueando a passagem</td><td>Espaço para circulação e aproximação da cama.</td></tr>
+          <tr><th scope="row">Banheiro</th><td>Falta de apoio e espaço</td><td>Barras de apoio e espaço para uso e transferência.</td></tr>
+          <tr><th scope="row">Comunicação</th><td>Informações apenas faladas ou em texto pouco legível</td><td>Opções de comunicação por texto, informações legíveis e recursos conforme a necessidade do hóspede.</td></tr>
+        </tbody>
+      </table>
+      <p>Esses exemplos não substituem uma avaliação técnica do espaço.</p>
+    </section>
+
+    <section id="verificacao">
+      <h2>Lista educativa de acessibilidade</h2>
+      <p>Use um nome fictício para praticar. Marque somente os recursos cuja presença você confirmou. Um item desmarcado significa que precisa de verificação, não que esteja necessariamente ausente.</p>
+      <!-- Texto e caixas de seleção são dois tipos diferentes de input. -->
+      <form id="formulario">
+        <label for="nome">Nome do estabelecimento:</label>
+        <input type="text" id="nome" placeholder="Ex.: Motel Exemplo" maxlength="80" required>
+
+        <fieldset>
+          <legend>Quais recursos foram confirmados?</legend>
+          <div class="opcao">
+            <input type="checkbox" id="entrada">
+            <label for="entrada">Rota de entrada acessível</label>
+          </div>
+          <div class="opcao">
+            <input type="checkbox" id="quarto">
+            <label for="quarto">Espaço de circulação no quarto</label>
+          </div>
+          <div class="opcao">
+            <input type="checkbox" id="banheiro">
+            <label for="banheiro">Recursos de acessibilidade no banheiro</label>
+          </div>
+          <div class="opcao">
+            <input type="checkbox" id="comunicacao">
+            <label for="comunicacao">Opções de comunicação acessível</label>
+          </div>
+        </fieldset>
+        <div class="botoes">
+          <button type="submit">Ver resultado</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+      <p id="resultado" role="status" aria-live="polite">Preencha a lista para ver os pontos a verificar.</p>
+      <p>Esta lista não certifica a acessibilidade do motel. Os dados não são enviados nem salvos.</p>
+    </section>
+
+    <section id="informacoes">
+      <h2>Busque informações antes da visita</h2>
+      <p>Entre em contato com o estabelecimento para confirmar os recursos de que você precisa. Peça informações sobre a entrada, o quarto, o banheiro e o atendimento.</p>
+      <p>Para conhecer a proposta de inclusão e autonomia na hospedagem, consulte o <a href="https://www.gov.br/turismo/pt-br/acesso-a-informacao/convenios-e-transferencias/projetos-apoiados-pelo-ministerio-do-turismo/programa-turismo-acessivel" target="_blank" rel="noopener noreferrer">Programa Turismo Acessível do Ministério do Turismo</a>.</p>
+      <h3>Explore sua região</h3>
+      <p>O mapa abaixo serve apenas para localização. Ele não mostra uma seleção de motéis nem confirma acessibilidade.</p>
+      <iframe title="Mapa do Brasil no OpenStreetMap"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-74%2C-34%2C-34%2C6&layer=mapnik"
+        loading="lazy"></iframe>
+      <p>O mapa precisa de internet. Se não carregar, <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">abra o mapa em outra aba</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Acesso e Respeito - Projeto educativo sobre acessibilidade em motéis.</p>
+    <p>Feito com <abbr title="HyperText Markup Language">HTML</abbr>, CSS e JavaScript.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
