@@ -1,113 +1,171 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acesso e Respeito - Acessibilidade em motéis</title>
+  <meta name="description" content="Amor Acessível: informação, autonomia e inclusão na escolha de motéis. Projeto educativo com exemplos fictícios.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Amor Acessível | O cuidado começa na escolha</title>
+  <link rel="icon" href="assets/coracao.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Cabeçalho e menu -->
-  <header>
-    <h1>Acesso e Respeito</h1>
-    <p>Acessibilidade em motéis: autonomia, privacidade e inclusão.</p>
-    <nav aria-label="Menu principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#verificacao">Lista educativa</a>
-      <a href="#informacoes">Saiba mais</a>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!--começo do codigo-->
+  <header class="cabecalho container">
+    <a class="marca" href="#inicio" aria-label="Amor Acessível, início">
+      <img src="assets/coracao.svg" alt="" width="34" height="34">
+      <span>amor <strong>acessível</strong><span class="marca-ponto">.</span></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#proposta">A proposta</a>
+      <a href="#cuidados">Antes de ir</a>
+      <a class="nav-busca" href="#buscar">Explorar opções <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main>
-    <section id="sobre">
-      <h2>Inclusão também faz parte da hospedagem</h2>
-      <div class="apresentacao">
-        <article>
-          <h3>Autonomia e privacidade para todos</h3>
-          <p>Pessoas com deficiência também frequentam motéis e devem ser tratadas com respeito. Barreiras nos espaços e na comunicação podem dificultar essa experiência.</p>
-          <p>Este projeto apresenta exemplos de recursos de acessibilidade e incentiva a conversa sobre um atendimento sem preconceitos.</p>
-          <ul>
-            <li>Fale diretamente com a pessoa, não apenas com seu acompanhante.</li>
-            <li>Pergunte antes de oferecer ajuda e respeite a resposta.</li>
-            <li>Informe com clareza os recursos disponíveis e suas limitações.</li>
-          </ul>
-        </article>
-        <img src="assets/acessibilidade.svg" alt="Ilustração de uma entrada ampla com símbolo de acessibilidade e uma mensagem de acolhimento." width="320" height="320">
+  <main id="conteudo">
+    <!-- SECTION: cada seção reúne um assunto; os títulos seguem h1, h2, h3. -->
+    <section class="hero container" id="inicio" aria-labelledby="titulo-principal">
+      <div class="hero-texto">
+        <p class="sobretitulo"><span class="ponto" aria-hidden="true"></span> ACESSIBILIDADE, RESPEITO E AFETO</p>
+        <h1 id="titulo-principal">O amor é para todos.<br><span>O acesso também.</span></h1>
+        <p class="introducao">Informação para escolher motéis com mais autonomia, conforto e respeito às suas necessidades.</p>
+        <a class="botao" href="#buscar">Encontrar uma opção <span aria-hidden="true">↗</span></a>
+        <p class="nota-hero">Um projeto sobre inclusão. Uma escolha com mais cuidado.</p>
       </div>
-      <aside><strong>Lembrete:</strong> as necessidades variam de pessoa para pessoa. Ouvir o hóspede é parte de um atendimento respeitoso.</aside>
+      <figure class="hero-arte">
+        <img src="assets/acolhimento.svg" width="520" height="420" alt="Ilustração de uma entrada sem degraus, com porta aberta e um coração simbolizando acolhimento.">
+        <figcaption>Mais autonomia. Menos barreiras.</figcaption>
+      </figure>
     </section>
 
-    <section id="recursos">
-      <h2>O que observar no estabelecimento?</h2>
-      <table>
-        <caption>Exemplos educativos de barreiras e melhorias</caption>
-        <thead>
-          <tr><th scope="col">Área</th><th scope="col">Barreira</th><th scope="col">Exemplo de melhoria</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Entrada</th><td>Degraus no caminho</td><td>Rota acessível sem degraus ou com solução adequada de acesso.</td></tr>
-          <tr><th scope="row">Quarto</th><td>Móveis bloqueando a passagem</td><td>Espaço para circulação e aproximação da cama.</td></tr>
-          <tr><th scope="row">Banheiro</th><td>Falta de apoio e espaço</td><td>Barras de apoio e espaço para uso e transferência.</td></tr>
-          <tr><th scope="row">Comunicação</th><td>Informações apenas faladas ou em texto pouco legível</td><td>Opções de comunicação por texto, informações legíveis e recursos conforme a necessidade do hóspede.</td></tr>
-        </tbody>
-      </table>
-      <p>Esses exemplos não substituem uma avaliação técnica do espaço.</p>
+    <section class="proposta container" id="proposta" aria-labelledby="titulo-proposta">
+      <div>
+        <p class="sobretitulo">01 / NOSSA PROPOSTA</p>
+        <h2 id="titulo-proposta">Acolher começa<br>com informar.</h2>
+      </div>
+      <div class="proposta-texto">
+        <p>A falta de informações claras sobre acessibilidade pode dificultar uma escolha simples: onde passar um momento a dois. O Amor Acessível propõe reunir essas informações em um só lugar.</p>
+        <p>O foco está em pessoas com deficiência (<abbr title="Pessoas com deficiência">PcD</abbr>), mobilidade reduzida ou dificuldades temporárias. Cada pessoa tem necessidades próprias; por isso, é importante conhecer os recursos de cada espaço.</p>
+        <blockquote>“Acolhimento é ter liberdade para escolher.”</blockquote>
+        <p class="pequeno">Princípio do projeto Amor Acessível.</p>
+      </div>
     </section>
 
-    <section id="verificacao">
-      <h2>Lista educativa de acessibilidade</h2>
-      <p>Use um nome fictício para praticar. Marque somente os recursos cuja presença você confirmou. Um item desmarcado significa que precisa de verificação, não que esteja necessariamente ausente.</p>
-      <!-- Texto e caixas de seleção são dois tipos diferentes de input. -->
-      <form id="formulario">
-        <label for="nome">Nome do estabelecimento:</label>
-        <input type="text" id="nome" placeholder="Ex.: Motel Exemplo" maxlength="80" required>
+    <section class="busca-secao container" id="buscar" aria-labelledby="titulo-busca">
+      <div class="secao-topo">
+        <div>
+          <p class="sobretitulo">02 / ESCOLHA COM AUTONOMIA</p>
+          <h2 id="titulo-busca">O que é importante para você?</h2>
+        </div>
+        <span class="selo">Demonstração acadêmica</span>
+      </div>
+      <p>Combine seu orçamento com os recursos que procura.</p>
+      <aside class="aviso" aria-label="Sobre os exemplos">
+        <strong>Exemplos fictícios.</strong> Nomes, preços e recursos foram criados para demonstrar o site. Não representam locais verificados e não permitem reservas.
+      </aside>
 
+      <!-- FORM: labels ligados aos inputs; a validação básica é feita pelo HTML. -->
+      <form id="form-busca" aria-describedby="privacidade">
+        <div class="campos">
+          <div class="campo">
+            <label for="nome">Como podemos chamar você? <span>(obrigatório)</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome ou apelido" maxlength="40" required autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="orcamento">Orçamento máximo por 3 horas <span>(R$)</span></label>
+            <input type="number" id="orcamento" name="orcamento" placeholder="Ex.: 180" min="1" max="10000" step="1" value="180" required>
+          </div>
+        </div>
         <fieldset>
-          <legend>Quais recursos foram confirmados?</legend>
-          <div class="opcao">
-            <input type="checkbox" id="entrada">
-            <label for="entrada">Rota de entrada acessível</label>
-          </div>
-          <div class="opcao">
-            <input type="checkbox" id="quarto">
-            <label for="quarto">Espaço de circulação no quarto</label>
-          </div>
-          <div class="opcao">
-            <input type="checkbox" id="banheiro">
-            <label for="banheiro">Recursos de acessibilidade no banheiro</label>
-          </div>
-          <div class="opcao">
-            <input type="checkbox" id="comunicacao">
-            <label for="comunicacao">Opções de comunicação acessível</label>
+          <legend>Recursos necessários <span>(opcional; selecione quantos quiser)</span></legend>
+          <div class="opcoes">
+            <label class="opcao" for="entrada"><input type="checkbox" id="entrada" name="entrada"> Entrada sem degraus</label>
+            <label class="opcao" for="banheiro"><input type="checkbox" id="banheiro" name="banheiro"> Banheiro adaptado</label>
+            <label class="opcao" for="comunicacao"><input type="checkbox" id="comunicacao" name="comunicacao"> Atendimento por texto</label>
           </div>
         </fieldset>
-        <div class="botoes">
-          <button type="submit">Ver resultado</button>
-          <button type="reset">Limpar</button>
+        <div class="form-rodape">
+          <p class="pequeno" id="privacidade">A busca acontece no seu navegador. Os dados não são enviados nem salvos.</p>
+          <div class="acoes">
+            <button class="botao secundario" type="reset">Limpar filtros</button>
+            <button class="botao" type="submit">Buscar opções <span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </form>
-      <p id="resultado" role="status" aria-live="polite">Preencha a lista para ver os pontos a verificar.</p>
-      <p>Esta lista não certifica a acessibilidade do motel. Os dados não são enviados nem salvos.</p>
+
+      <!-- A região status anuncia as mudanças para tecnologias assistivas. -->
+      <p id="resumo" class="resumo" role="status" aria-live="polite" aria-atomic="true">Ative o JavaScript para explorar os exemplos. A comparação completa está na tabela abaixo.</p>
+      <div id="resultados" class="cartoes" aria-label="Resultados da busca"></div>
+      <noscript><p class="aviso">A busca precisa de JavaScript. Você ainda pode consultar a tabela e as orientações desta página.</p></noscript>
+
+      <details class="comparacao">
+        <summary>Comparar todos os exemplos <span aria-hidden="true">+</span></summary>
+        <div class="tabela-container" role="region" aria-label="Comparação dos três exemplos; role horizontalmente em telas pequenas" tabindex="0">
+          <table>
+            <caption>Dados fictícios para estudo. “Não informado” não comprova ausência nem presença do recurso.</caption>
+            <thead><tr><th scope="col">Exemplo de motel</th><th scope="col">3 horas</th><th scope="col">Sem degraus</th><th scope="col">Banheiro adaptado</th><th scope="col">Atendimento por texto</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Motel Horizonte</th><td>R$ 120</td><td>Sim</td><td>Não informado</td><td>Sim</td></tr>
+              <tr><th scope="row">Motel Acolher</th><td>R$ 160</td><td>Sim</td><td>Sim</td><td>Não informado</td></tr>
+              <tr><th scope="row">Motel Sereno</th><td>R$ 220</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
     </section>
 
-    <section id="informacoes">
-      <h2>Busque informações antes da visita</h2>
-      <p>Entre em contato com o estabelecimento para confirmar os recursos de que você precisa. Peça informações sobre a entrada, o quarto, o banheiro e o atendimento.</p>
-      <p>Para conhecer a proposta de inclusão e autonomia na hospedagem, consulte o <a href="https://www.gov.br/turismo/pt-br/acesso-a-informacao/convenios-e-transferencias/projetos-apoiados-pelo-ministerio-do-turismo/programa-turismo-acessivel" target="_blank" rel="noopener noreferrer">Programa Turismo Acessível do Ministério do Turismo</a>.</p>
-      <h3>Explore sua região</h3>
-      <p>O mapa abaixo serve apenas para localização. Ele não mostra uma seleção de motéis nem confirma acessibilidade.</p>
-      <iframe title="Mapa do Brasil no OpenStreetMap"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-74%2C-34%2C-34%2C6&layer=mapnik"
-        loading="lazy"></iframe>
-      <p>O mapa precisa de internet. Se não carregar, <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">abra o mapa em outra aba</a>.</p>
+    <section class="cuidados container" id="cuidados" aria-labelledby="titulo-cuidados">
+      <p class="sobretitulo">03 / ANTES DE IR</p>
+      <h2 id="titulo-cuidados">Pequenas perguntas.<br>Uma escolha mais tranquila.</h2>
+      <p>Use este roteiro para conversar com um estabelecimento real antes da visita.</p>
+      <div class="orientacoes">
+        <article>
+          <span class="numero">01</span>
+          <h3>Chegar e circular</h3>
+          <p>Peça informações sobre o trajeto completo, da entrada até a suíte.</p>
+          <ul><li>Há degraus ou uma rota alternativa?</li><li>As portas e passagens atendem às suas necessidades?</li><li>Existe espaço para circular no quarto?</li></ul>
+        </article>
+        <article>
+          <span class="numero">02</span>
+          <h3>Usar com conforto</h3>
+          <p>Confirme os detalhes do quarto e do banheiro, de acordo com sua rotina.</p>
+          <ul><li>Há barras de apoio e assento no banho?</li><li>A altura da cama é adequada para você?</li><li>É possível receber fotos e medidas atuais?</li></ul>
+        </article>
+        <article>
+          <span class="numero">03</span>
+          <h3>Ser compreendido</h3>
+          <p>Escolha a forma de comunicação que funciona melhor para você.</p>
+          <ul><li>O atendimento pode acontecer por texto?</li><li>As informações são claras e legíveis?</li><li>A equipe respeita sua autonomia e privacidade?</li></ul>
+        </article>
+      </div>
+      <aside class="lembrete"><strong>Cada necessidade é única.</strong> Um recurso isolado não garante que todo o espaço seja acessível. Confirme os detalhes da suíte e a disponibilidade diretamente com o local.</aside>
+    </section>
+
+    <section class="aprender container" aria-labelledby="titulo-aprender">
+      <div class="aprender-texto">
+        <p class="sobretitulo">04 / ACESSO TAMBÉM NA WEB</p>
+        <h2 id="titulo-aprender">A inclusão começa<br>nesta tela.</h2>
+        <p>Informação acessível também faz parte do cuidado. Conheça a introdução à acessibilidade na web, produzida pela <abbr title="Web Accessibility Initiative">WAI</abbr>, do W3C.</p>
+        <p class="pequeno">Vídeo em inglês, com opção de legendas em português. Requer internet e pode depender das permissões do YouTube.</p>
+        <a class="link-texto" href="https://www.w3.org/WAI/videos/standards-and-benefits/pt-BR" target="_blank" rel="noopener noreferrer">Fonte e transcrição em português <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+      </div>
+      <div class="video">
+        <!-- IFRAME: conteúdo externo; o link ao lado oferece uma alternativa textual. -->
+        <iframe src="https://www.youtube-nocookie.com/embed/20SHvU2PKsM?cc_load_policy=1&amp;cc_lang_pref=pt-BR" title="Vídeo do W3C: introdução à acessibilidade web e aos padrões W3C" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <p class="pequeno">Se o vídeo não carregar, use o link da fonte para ler a transcrição.</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Acesso e Respeito - Projeto educativo sobre acessibilidade em motéis.</p>
-    <p>Feito com <abbr title="HyperText Markup Language">HTML</abbr>, CSS e JavaScript.</p>
+  <footer class="rodape container">
+    <a class="marca" href="#inicio">amor <strong>acessível</strong><span class="marca-ponto">.</span></a>
+    <p>Informação, autonomia e respeito.<br><span class="pequeno">Projeto acadêmico • HTML, CSS e JavaScript • 2026</span></p>
+    <a class="link-texto" href="#inicio">Voltar ao início ↑</a>
   </footer>
+  <!-- O script externo fica no final: o HTML já foi carregado quando ele executa. -->
   <script src="script.js"></script>
 </body>
 </html>
