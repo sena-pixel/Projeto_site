@@ -1,194 +1,57 @@
-/* 1. ESTILO GERAL */
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-section {
-  padding: 35px 0;
-  border-bottom: 1px solid #444444;
-}
-h1 { font-size: 42px; line-height: 1.2; }
-h2 { font-size: 28px; line-height: 1.3; }
-h3 { font-size: 22px; }
-p { margin: 12px 0; }
-figure { margin: 0; }
-img { max-width: 100%; height: auto; }
-a { color: #ffb3c6; text-decoration: none; }
-a:hover { text-decoration: underline; }
-button, input { font: inherit; }
 
-/* 2. CABEÇALHO: Flexbox distribui a marca e o menu. */
-.cabecalho {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 25px 0;
-  border-bottom: 1px solid #444444;
-}
-.marca {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 22px;
-}
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-nav a { padding: 10px 0; }
+const recursos = [
+  { nome: "Texto com áudio", descricao: "Apresente um texto curto junto de uma gravação da leitura. A pessoa pode escolher ler, ouvir ou acompanhar os dois.", audio: true, etapas: false, visual: false },
+  { nome: "Roteiro visual", descricao: "Organize a atividade em passos numerados. Use uma imagem relevante para acompanhar cada passo.", audio: false, etapas: true, visual: true },
+  { nome: "Atividade em vários formatos", descricao: "Divida a atividade em passos. Em cada um, ofereça uma instrução curta, uma imagem e uma gravação em áudio.", audio: true, etapas: true, visual: true }
+];
 
-/* 3. APRESENTAÇÃO: texto e imagem lado a lado. */
-.hero {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-.hero-texto { width: 60%; }
-.hero-arte { width: 40%; text-align: center; }
-.hero h1 span, .sobretitulo, .numero { color: #ffb3c6; }
-.pequeno, .nota-hero, figcaption, .etiqueta { color: #cccccc; font-size: 14px; }
-blockquote, .aviso, .lembrete {
-  margin: 20px 0;
-  padding: 15px;
-  border-left: 3px solid #ffb3c6;
-  background-color: #181818;
-}
-.selo { color: #ffb3c6; }
+// Localiza os elementos que serão usados pelo JavaScript.
+const formulario = document.getElementById("form-busca");
+const resultados = document.getElementById("resultados");
+const resumo = document.getElementById("resumo");
 
-/* 4. FORMULÁRIO: campos simples com rótulos visíveis. */
-#form-busca {
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #181818;
-  border: 1px solid #666666;
-  border-radius: 6px;
-}
-.campos {
-  display: flex;
-  gap: 20px;
-}
-.campo { width: 50%; }
-label { display: block; margin-bottom: 8px; }
-input {
-  width: 100%;
-  padding: 10px;
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #999999;
-  border-radius: 4px;
-}
-input::placeholder { color: #bbbbbb; }
-input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #ffb3c6;
-}
-fieldset { margin: 20px 0; padding: 0; border: 0; min-width: 0; }
-legend { margin-bottom: 10px; }
-.opcao {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  cursor: pointer;
-}
-.acoes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-}
-.botao {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #ffb3c6;
-  color: #000000;
-  border: 1px solid #ffb3c6;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.botao:hover { background-color: #ffd6e1; text-decoration: none; }
-.secundario { background-color: #222222; color: #ffffff; }
-.secundario:hover { background-color: #444444; }
+function mostrarRecursos(lista) {
+  resultados.innerHTML = "";
+  resumo.textContent = `${lista.length} ideia(s) de apoio encontrada(s).`;
 
-/* 5. FLEXBOX PRINCIPAL: organiza os cartões dos motéis. */
-.cartoes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20px;
-}
-.cartao {
-  flex-basis: 260px;
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #181818;
-  border: 1px solid #666666;
-  border-radius: 6px;
-}
-.preco { color: #ffb3c6; font-size: 24px; }
-.preco span { color: #cccccc; font-size: 14px; }
-.recursos { padding-left: 20px; }
-.recursos li { margin-bottom: 8px; }
-.sim { color: #c5e0c5; }
-.pendente { color: #cccccc; }
-.resumo { margin: 20px 0; overflow-wrap: anywhere; }
-.vazio { width: 100%; padding: 20px; border: 1px dashed #ffb3c6; }
-
-/* 6. TABELA, ORIENTAÇÕES E VÍDEO */
-.comparacao { margin-top: 25px; }
-summary { padding: 15px 0; cursor: pointer; color: #ffb3c6; }
-.tabela-container { overflow-x: auto; }
-table { width: 100%; min-width: 650px; border-collapse: collapse; }
-caption { padding: 15px 0; text-align: left; color: #cccccc; }
-th, td { padding: 12px; border: 1px solid #666666; text-align: left; }
-th { background-color: #222222; }
-.orientacoes article { padding: 15px 0; }
-.numero { font-weight: bold; }
-iframe { width: 100%; max-width: 700px; height: 360px; border: 1px solid #666666; }
-.video { margin-top: 25px; }
-.rodape { padding: 30px 0; }
-
-/* 7. ACESSIBILIDADE: mostrar o foco do teclado. */
-:focus-visible { outline: 3px solid #ffb3c6; outline-offset: 4px; }
-.pular { position: absolute; top: -100px; left: 10px; }
-.pular:focus { top: 10px; padding: 10px; background-color: #000000; }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-}
-
-/* 8. CELULAR: trocar a linha por uma coluna. */
-@media (max-width: 700px) {
-  .hero, .campos, .cartoes {
-    flex-direction: column;
+  if (lista.length === 0) {
+    resumo.textContent = "Nenhuma ideia atende à seleção. Clique em Mostrar todas para explorar as opções.";
+    return;
   }
-  .hero-texto, .hero-arte, .campo {
-    width: 100%;
+
+  for (const recurso of lista) {
+    // Só os dados fixos acima são inseridos como HTML.
+    resultados.innerHTML += `
+      <article class="cartao">
+        <h3>${recurso.nome}</h3>
+        <p>${recurso.descricao}</p>
+      </article>`;
   }
-  .cartao { flex-basis: auto; }
-  h1 { font-size: 32px; }
-  h2 { font-size: 25px; }
-  iframe { height: 220px; }
 }
+
+formulario.addEventListener("submit", function (evento) {
+  evento.preventDefault(); // Mantém a busca na mesma página.
+  const audio = document.getElementById("audio").checked;
+  const etapas = document.getElementById("etapas").checked;
+  const visual = document.getElementById("visual").checked;
+  const encontrados = [];
+
+  for (const recurso of recursos) {
+    const atendeAudio = !audio || recurso.audio;
+    const atendeEtapas = !etapas || recurso.etapas;
+    const atendeVisual = !visual || recurso.visual;
+
+    // Todas as opções marcadas precisam estar presentes na ideia.
+    if (atendeAudio && atendeEtapas && atendeVisual) {
+      encontrados.push(recurso);
+    }
+  }
+  mostrarRecursos(encontrados);
+});
+
+formulario.addEventListener("reset", function () {
+  mostrarRecursos(recursos);
+});
+
+// Mostra todas as ideias ao abrir a página.
+mostrarRecursos(recursos);
