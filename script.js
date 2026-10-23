@@ -1,100 +1,57 @@
-// 1. DADOS LOCAIS: exemplos fictícios, sem servidor ou banco de dados.
-// false significa que o recurso NÃO foi informado no exemplo.
-const moteis = [
-  { nome: "Motel Horizonte", preco: 120, entrada: true, banheiro: false, comunicacao: true },
-  { nome: "Motel Acolher", preco: 160, entrada: true, banheiro: true, comunicacao: false },
-  { nome: "Motel Sereno", preco: 220, entrada: true, banheiro: true, comunicacao: true }
+// Ideias educativas: os valores indicam os formatos presentes em cada exemplo.
+const recursos = [
+  { nome: "Texto com áudio", descricao: "Apresente um texto curto junto de uma gravação da leitura. A pessoa pode escolher ler, ouvir ou acompanhar os dois.", audio: true, etapas: false, visual: false },
+  { nome: "Roteiro visual", descricao: "Organize a atividade em passos numerados. Use uma imagem relevante para acompanhar cada passo.", audio: false, etapas: true, visual: true },
+  { nome: "Atividade em vários formatos", descricao: "Divida a atividade em passos. Em cada um, ofereça uma instrução curta, uma imagem e uma gravação em áudio.", audio: true, etapas: true, visual: true }
 ];
 
-// 2. DOM: guardar referências aos elementos da página.
+// Localiza os elementos que serão usados pelo JavaScript.
 const formulario = document.getElementById("form-busca");
-const campoNome = document.getElementById("nome");
 const resultados = document.getElementById("resultados");
 const resumo = document.getElementById("resumo");
 
-// Função auxiliar: o operador ternário escolhe entre duas mensagens.
-function recurso(informado, descricao) {
-  return informado
-    ? `<li class="sim"><span aria-hidden="true">✓</span> ${descricao}</li>`
-    : `<li class="pendente"><span aria-hidden="true">—</span> ${descricao}: não informado</li>`;
-}
-
-// 3. SAÍDA: template literals montam cartões usando apenas os dados locais.
-function mostrarMoteis(lista) {
+function mostrarRecursos(lista) {
   resultados.innerHTML = "";
+  resumo.textContent = `${lista.length} ideia(s) de apoio encontrada(s).`;
 
   if (lista.length === 0) {
-    resultados.innerHTML = `
-      <div class="vazio">
-        <h3>Nenhum exemplo combina com esta busca.</h3>
-        <p>Experimente aumentar o orçamento ou use “Limpar filtros” para visualizar todos os exemplos. Preserve os recursos que são essenciais para você.</p>
-      </div>`;
+    resumo.textContent = "Nenhuma ideia atende à seleção. Clique em Mostrar todas para explorar as opções.";
     return;
   }
 
-  for (const motel of lista) {
+  for (const recurso of lista) {
+    // Só os dados fixos acima são inseridos como HTML.
     resultados.innerHTML += `
       <article class="cartao">
-        <p class="etiqueta">Estabelecimento fictício</p>
-        <h3>${motel.nome}</h3>
-        <p class="preco">R$ ${motel.preco} <span>/ 3 horas</span></p>
-        <ul class="recursos">
-          ${recurso(motel.entrada, "Entrada sem degraus")}
-          ${recurso(motel.banheiro, "Banheiro adaptado")}
-          ${recurso(motel.comunicacao, "Atendimento por texto")}
-        </ul>
+        <h3>${recurso.nome}</h3>
+        <p>${recurso.descricao}</p>
       </article>`;
   }
 }
 
-// 4. ENTRADA E VALIDAÇÃO: espaços em branco não contam como um nome.
-campoNome.addEventListener("input", function () {
-  campoNome.setCustomValidity("");
-});
-
 formulario.addEventListener("submit", function (evento) {
-  evento.preventDefault(); // Impede que a página recarregue ao enviar o formulário.
-
-  const nome = campoNome.value.trim();
-  if (nome === "") {
-    campoNome.setCustomValidity("Digite um nome ou apelido, sem usar apenas espaços.");
-    campoNome.reportValidity();
-    return;
-  }
-
-  const orcamento = Number(document.getElementById("orcamento").value);
-  const precisaEntrada = document.getElementById("entrada").checked;
-  const precisaBanheiro = document.getElementById("banheiro").checked;
-  const precisaComunicacao = document.getElementById("comunicacao").checked;
+  evento.preventDefault(); // Mantém a busca na mesma página.
+  const audio = document.getElementById("audio").checked;
+  const etapas = document.getElementById("etapas").checked;
+  const visual = document.getElementById("visual").checked;
   const encontrados = [];
-  let quantidade = 0; // let permite alterar o contador ao longo do laço.
 
-  // 5. REGRA: precisa caber no orçamento E ter TODOS os recursos selecionados.
-  for (const motel of moteis) {
-    const cabeNoOrcamento = motel.preco <= orcamento;
-    const atendeEntrada = !precisaEntrada || motel.entrada;
-    const atendeBanheiro = !precisaBanheiro || motel.banheiro;
-    const atendeComunicacao = !precisaComunicacao || motel.comunicacao;
+  for (const recurso of recursos) {
+    const atendeAudio = !audio || recurso.audio;
+    const atendeEtapas = !etapas || recurso.etapas;
+    const atendeVisual = !visual || recurso.visual;
 
-    if (cabeNoOrcamento && atendeEntrada && atendeBanheiro && atendeComunicacao) {
-      encontrados.push(motel);
-      quantidade++;
+    // Todas as opções marcadas precisam estar presentes na ideia.
+    if (atendeAudio && atendeEtapas && atendeVisual) {
+      encontrados.push(recurso);
     }
   }
-
-  mostrarMoteis(encontrados);
-  const palavra = quantidade === 1 ? "opção fictícia encontrada" : "opções fictícias encontradas";
-  // O nome vem do usuário: textContent o exibe como texto, nunca como HTML.
-  resumo.textContent = `${nome}, ${quantidade} ${palavra} com orçamento de até R$ ${orcamento}.`;
+  mostrarRecursos(encontrados);
 });
 
-// 6. RESET: o navegador restaura os campos; o código restaura os resultados.
 formulario.addEventListener("reset", function () {
-  campoNome.setCustomValidity("");
-  mostrarMoteis(moteis);
-  resumo.textContent = "3 exemplos fictícios para explorar. Preencha a busca para filtrar.";
+  mostrarRecursos(recursos);
 });
 
-// Estado inicial: mostrar todos os exemplos, antes de qualquer busca.
-mostrarMoteis(moteis);
-resumo.textContent = "3 exemplos fictícios para explorar. Preencha a busca para filtrar.";
+// Mostra todas as ideias ao abrir a página.
+mostrarRecursos(recursos);
