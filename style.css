@@ -1,57 +1,67 @@
+/* Aparência geral da página. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  background: #ffffff;
+  color: #17324d;
+}
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+section, footer { padding: 24px 0; }
+section { border-bottom: 1px solid #cbdcec; }
+h1, h2 { line-height: 1.3; color: #124b87; }
+a { color: #1559a6; }
 
-const recursos = [
-  { nome: "Texto com áudio", descricao: "Apresente um texto curto junto de uma gravação da leitura. A pessoa pode escolher ler, ouvir ou acompanhar os dois.", audio: true, etapas: false, visual: false },
-  { nome: "Roteiro visual", descricao: "Organize a atividade em passos numerados. Use uma imagem relevante para acompanhar cada passo.", audio: false, etapas: true, visual: true },
-  { nome: "Atividade em vários formatos", descricao: "Divida a atividade em passos. Em cada um, ofereça uma instrução curta, uma imagem e uma gravação em áudio.", audio: true, etapas: true, visual: true }
-];
+/* Flexbox organiza os filhos diretos do cabeçalho: título e menu. */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 0;
+}
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
 
-// Localiza os elementos que serão usados pelo JavaScript.
-const formulario = document.getElementById("form-busca");
-const resultados = document.getElementById("resultados");
-const resumo = document.getElementById("resumo");
+/* Formulário. */
+form, .cartao { background: #eef5fc; padding: 20px; border-radius: 8px; }
+label { display: block; margin: 10px 0; }
+input, button { font: inherit; }
+input[type="checkbox"] { width: 20px; height: 20px; accent-color: #1559a6; }
+fieldset { margin: 16px 0; border: 1px solid #94b5d6; }
+button {
+  margin: 4px 8px 4px 0;
+  padding: 10px 16px;
+  background: #1559a6;
+  color: #ffffff;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover { background: #104580; }
+:focus-visible { outline: 3px solid #1559a6; outline-offset: 4px; }
 
-function mostrarRecursos(lista) {
-  resultados.innerHTML = "";
-  resumo.textContent = `${lista.length} ideia(s) de apoio encontrada(s).`;
+/* O pai organiza os cartões em uma linha e permite novas linhas. */
+.cartoes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 16px;
+}
+/* Cada filho começa com 260px e cresce para ocupar o espaço disponível. */
+.cartao { flex: 1 1 260px; min-width: 0; overflow-wrap: anywhere; }
+p { max-width: 65ch; }
 
-  if (lista.length === 0) {
-    resumo.textContent = "Nenhuma ideia atende à seleção. Clique em Mostrar todas para explorar as opções.";
-    return;
-  }
-
-  for (const recurso of lista) {
-    // Só os dados fixos acima são inseridos como HTML.
-    resultados.innerHTML += `
-      <article class="cartao">
-        <h3>${recurso.nome}</h3>
-        <p>${recurso.descricao}</p>
-      </article>`;
-  }
+/* No celular, os cartões ficam um abaixo do outro. */
+@media (max-width: 600px) {
+  .cartoes { flex-direction: column; }
+  .cartao { flex: auto; }
 }
 
-formulario.addEventListener("submit", function (evento) {
-  evento.preventDefault(); // Mantém a busca na mesma página.
-  const audio = document.getElementById("audio").checked;
-  const etapas = document.getElementById("etapas").checked;
-  const visual = document.getElementById("visual").checked;
-  const encontrados = [];
 
-  for (const recurso of recursos) {
-    const atendeAudio = !audio || recurso.audio;
-    const atendeEtapas = !etapas || recurso.etapas;
-    const atendeVisual = !visual || recurso.visual;
-
-    // Todas as opções marcadas precisam estar presentes na ideia.
-    if (atendeAudio && atendeEtapas && atendeVisual) {
-      encontrados.push(recurso);
-    }
-  }
-  mostrarRecursos(encontrados);
-});
-
-formulario.addEventListener("reset", function () {
-  mostrarRecursos(recursos);
-});
-
-// Mostra todas as ideias ao abrir a página.
-mostrarRecursos(recursos);
