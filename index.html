@@ -3,169 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Amor Acessível: informação, autonomia e inclusão na escolha de motéis. Projeto educativo com exemplos fictícios.">
-  <meta name="theme-color" content="#0b0b0c">
-  <title>Amor Acessível | O cuidado começa na escolha</title>
-  <link rel="icon" href="assets/coracao.svg" type="image/svg+xml">
+  <title>Aprender Juntos | Inclusão de pessoas com dislexia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-
-  <!--começo do codigo-->
-  <header class="cabecalho container">
-    <a class="marca" href="#inicio" aria-label="Amor Acessível, início">
-      <img src="assets/coracao.svg" alt="" width="34" height="34">
-      <span>amor <strong>acessível</strong><span class="marca-ponto">.</span></span>
-    </a>
-    <nav aria-label="Navegação principal">
-      <a href="#proposta">A proposta</a>
-      <a href="#cuidados">Antes de ir</a>
-      <a class="nav-busca" href="#buscar">Explorar opções <span aria-hidden="true">↗</span></a>
+  <header class="container cabecalho">
+    <h1>Aprender Juntos</h1>
+    <nav aria-label="Menu principal">
+      <a href="#buscar">Recursos de apoio</a>
+      <a href="#inclusao">Como incluir</a>
     </nav>
   </header>
-
-  <main id="conteudo">
-    <!-- SECTION: cada seção reúne um assunto; os títulos seguem h1, h2, h3. -->
-    <section class="hero container" id="inicio" aria-labelledby="titulo-principal">
-      <div class="hero-texto">
-        <p class="sobretitulo"><span class="ponto" aria-hidden="true"></span> ACESSIBILIDADE, RESPEITO E AFETO</p>
-        <h1 id="titulo-principal">O amor é para todos.<br><span>O acesso também.</span></h1>
-        <p class="introducao">Informação para escolher motéis com mais autonomia, conforto e respeito às suas necessidades.</p>
-        <a class="botao" href="#buscar">Encontrar uma opção <span aria-hidden="true">↗</span></a>
-        <p class="nota-hero">Um projeto sobre inclusão. Uma escolha com mais cuidado.</p>
-      </div>
-      <figure class="hero-arte">
-        <img src="assets/acolhimento.svg" width="520" height="420" alt="Ilustração de uma entrada sem degraus, com porta aberta e um coração simbolizando acolhimento.">
-        <figcaption>Mais autonomia. Menos barreiras.</figcaption>
-      </figure>
+  <main class="container">
+    <section>
+      <h2>Inclusão de pessoas com dislexia</h2>
+      <p>Mais respeito às diferentes formas de ler e aprender.</p>
+      <p>Este projeto valoriza a participação de pessoas com dislexia na escola, no trabalho e no dia a dia.</p>
+      <p>Converse com cada pessoa para conhecer suas preferências de leitura e aprendizagem.</p>
     </section>
 
-    <section class="proposta container" id="proposta" aria-labelledby="titulo-proposta">
-      <div>
-        <p class="sobretitulo">01 / NOSSA PROPOSTA</p>
-        <h2 id="titulo-proposta">Acolher começa<br>com informar.</h2>
-      </div>
-      <div class="proposta-texto">
-        <p>A falta de informações claras sobre acessibilidade pode dificultar uma escolha simples: onde passar um momento a dois. O Amor Acessível propõe reunir essas informações em um só lugar.</p>
-        <p>O foco está em pessoas com deficiência (<abbr title="Pessoas com deficiência">PcD</abbr>), mobilidade reduzida ou dificuldades temporárias. Cada pessoa tem necessidades próprias; por isso, é importante conhecer os recursos de cada espaço.</p>
-        <blockquote>“Acolhimento é ter liberdade para escolher.”</blockquote>
-        <p class="pequeno">Princípio do projeto Amor Acessível.</p>
-      </div>
-    </section>
-
-    <section class="busca-secao container" id="buscar" aria-labelledby="titulo-busca">
-      <div class="secao-topo">
-        <div>
-          <p class="sobretitulo">02 / ESCOLHA COM AUTONOMIA</p>
-          <h2 id="titulo-busca">O que é importante para você?</h2>
-        </div>
-        <span class="selo">Demonstração acadêmica</span>
-      </div>
-      <p>Combine seu orçamento com os recursos que procura.</p>
-      <aside class="aviso" aria-label="Sobre os exemplos">
-        <strong>Exemplos fictícios.</strong> Nomes, preços e recursos foram criados para demonstrar o site. Não representam locais verificados e não permitem reservas.
-      </aside>
-
-      <!-- FORM: labels ligados aos inputs; a validação básica é feita pelo HTML. -->
-      <form id="form-busca" aria-describedby="privacidade">
-        <div class="campos">
-          <div class="campo">
-            <label for="nome">Como podemos chamar você? <span>(obrigatório)</span></label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome ou apelido" maxlength="40" required autocomplete="off">
-          </div>
-          <div class="campo">
-            <label for="orcamento">Orçamento máximo por 3 horas <span>(R$)</span></label>
-            <input type="number" id="orcamento" name="orcamento" placeholder="Ex.: 180" min="1" max="10000" step="1" value="180" required>
-          </div>
-        </div>
+    <section id="buscar">
+      <h2>Encontre uma ideia de apoio</h2>
+      <p>Selecione uma ou mais opções. A busca mostra ideias que atendem a todas as opções marcadas.</p>
+      <form id="form-busca">
         <fieldset>
-          <legend>Recursos necessários <span>(opcional; selecione quantos quiser)</span></legend>
-          <div class="opcoes">
-            <label class="opcao" for="entrada"><input type="checkbox" id="entrada" name="entrada"> Entrada sem degraus</label>
-            <label class="opcao" for="banheiro"><input type="checkbox" id="banheiro" name="banheiro"> Banheiro adaptado</label>
-            <label class="opcao" for="comunicacao"><input type="checkbox" id="comunicacao" name="comunicacao"> Atendimento por texto</label>
-          </div>
+          <legend>O que você quer explorar?</legend>
+          <label><input id="audio" type="checkbox"> Ouvir o conteúdo</label>
+          <label><input id="etapas" type="checkbox"> Organizar a atividade em etapas</label>
+          <label><input id="visual" type="checkbox"> Usar apoio visual</label>
         </fieldset>
-        <div class="form-rodape">
-          <p class="pequeno" id="privacidade">A busca acontece no seu navegador. Os dados não são enviados nem salvos.</p>
-          <div class="acoes">
-            <button class="botao secundario" type="reset">Limpar filtros</button>
-            <button class="botao" type="submit">Buscar opções <span aria-hidden="true">→</span></button>
-          </div>
-        </div>
+        <button type="submit">Buscar ideias</button>
+        <button type="reset">Mostrar todas</button>
+        <p>A busca acontece no navegador. Nenhum dado é enviado ou salvo.</p>
       </form>
-
-      <!-- A região status anuncia as mudanças para tecnologias assistivas. -->
-      <p id="resumo" class="resumo" role="status" aria-live="polite" aria-atomic="true">Ative o JavaScript para explorar os exemplos. A comparação completa está na tabela abaixo.</p>
-      <div id="resultados" class="cartoes" aria-label="Resultados da busca"></div>
-      <noscript><p class="aviso">A busca precisa de JavaScript. Você ainda pode consultar a tabela e as orientações desta página.</p></noscript>
-
-      <details class="comparacao">
-        <summary>Comparar todos os exemplos <span aria-hidden="true">+</span></summary>
-        <div class="tabela-container" role="region" aria-label="Comparação dos três exemplos; role horizontalmente em telas pequenas" tabindex="0">
-          <table>
-            <caption>Dados fictícios para estudo. “Não informado” não comprova ausência nem presença do recurso.</caption>
-            <thead><tr><th scope="col">Exemplo de motel</th><th scope="col">3 horas</th><th scope="col">Sem degraus</th><th scope="col">Banheiro adaptado</th><th scope="col">Atendimento por texto</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Motel Horizonte</th><td>R$ 120</td><td>Sim</td><td>Não informado</td><td>Sim</td></tr>
-              <tr><th scope="row">Motel Acolher</th><td>R$ 160</td><td>Sim</td><td>Sim</td><td>Não informado</td></tr>
-              <tr><th scope="row">Motel Sereno</th><td>R$ 220</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+      <p id="resumo" role="status">Ative o JavaScript para ver as ideias de apoio.</p>
+      <!-- O JavaScript insere os cartões nesta div. -->
+      <div id="resultados" class="cartoes"></div>
     </section>
 
-    <section class="cuidados container" id="cuidados" aria-labelledby="titulo-cuidados">
-      <p class="sobretitulo">03 / ANTES DE IR</p>
-      <h2 id="titulo-cuidados">Pequenas perguntas.<br>Uma escolha mais tranquila.</h2>
-      <p>Use este roteiro para conversar com um estabelecimento real antes da visita.</p>
-      <div class="orientacoes">
-        <article>
-          <span class="numero">01</span>
-          <h3>Chegar e circular</h3>
-          <p>Peça informações sobre o trajeto completo, da entrada até a suíte.</p>
-          <ul><li>Há degraus ou uma rota alternativa?</li><li>As portas e passagens atendem às suas necessidades?</li><li>Existe espaço para circular no quarto?</li></ul>
-        </article>
-        <article>
-          <span class="numero">02</span>
-          <h3>Usar com conforto</h3>
-          <p>Confirme os detalhes do quarto e do banheiro, de acordo com sua rotina.</p>
-          <ul><li>Há barras de apoio e assento no banho?</li><li>A altura da cama é adequada para você?</li><li>É possível receber fotos e medidas atuais?</li></ul>
-        </article>
-        <article>
-          <span class="numero">03</span>
-          <h3>Ser compreendido</h3>
-          <p>Escolha a forma de comunicação que funciona melhor para você.</p>
-          <ul><li>O atendimento pode acontecer por texto?</li><li>As informações são claras e legíveis?</li><li>A equipe respeita sua autonomia e privacidade?</li></ul>
-        </article>
-      </div>
-      <aside class="lembrete"><strong>Cada necessidade é única.</strong> Um recurso isolado não garante que todo o espaço seja acessível. Confirme os detalhes da suíte e a disponibilidade diretamente com o local.</aside>
-    </section>
-
-    <section class="aprender container" aria-labelledby="titulo-aprender">
-      <div class="aprender-texto">
-        <p class="sobretitulo">04 / ACESSO TAMBÉM NA WEB</p>
-        <h2 id="titulo-aprender">A inclusão começa<br>nesta tela.</h2>
-        <p>Informação acessível também faz parte do cuidado. Conheça a introdução à acessibilidade na web, produzida pela <abbr title="Web Accessibility Initiative">WAI</abbr>, do W3C.</p>
-        <p class="pequeno">Vídeo em inglês, com opção de legendas em português. Requer internet e pode depender das permissões do YouTube.</p>
-        <a class="link-texto" href="https://www.w3.org/WAI/videos/standards-and-benefits/pt-BR" target="_blank" rel="noopener noreferrer">Fonte e transcrição em português <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
-      </div>
-      <div class="video">
-        <!-- IFRAME: conteúdo externo; o link ao lado oferece uma alternativa textual. -->
-        <iframe src="https://www.youtube-nocookie.com/embed/20SHvU2PKsM?cc_load_policy=1&amp;cc_lang_pref=pt-BR" title="Vídeo do W3C: introdução à acessibilidade web e aos padrões W3C" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
-        <p class="pequeno">Se o vídeo não carregar, use o link da fonte para ler a transcrição.</p>
-      </div>
+    <section id="inclusao">
+      <h2>Como incluir no dia a dia</h2>
+      <ul>
+        <li>Pergunte à pessoa quais formas de apresentação ela prefere.</li>
+        <li>Escreva instruções curtas, com uma ação de cada vez.</li>
+        <li>Separe textos longos em pequenos blocos com títulos claros.</li>
+        <li>Ofereça outras formas de participar, como falar, escrever ou apresentar imagens.</li>
+        <li>Respeite o ritmo da pessoa e evite expô-la a situações constrangedoras.</li>
+      </ul>
+      <p>As ideias deste site podem ser adaptadas às preferências de cada pessoa.</p>
+      <p>Referência sobre conteúdo claro: <a href="https://www.w3.org/WAI/WCAG2/supplemental/objectives/o3-clear-content/">orientações de acessibilidade do W3C (em inglês)</a>.</p>
     </section>
   </main>
-
-  <footer class="rodape container">
-    <a class="marca" href="#inicio">amor <strong>acessível</strong><span class="marca-ponto">.</span></a>
-    <p>Informação, autonomia e respeito.<br><span class="pequeno">Projeto acadêmico • HTML, CSS e JavaScript • 2026</span></p>
-    <a class="link-texto" href="#inicio">Voltar ao início ↑</a>
+  <footer class="container">
+    <p>Aprender Juntos — Projeto educativo sobre inclusão de pessoas com dislexia.</p>
   </footer>
-  <!-- O script externo fica no final: o HTML já foi carregado quando ele executa. -->
   <script src="script.js"></script>
 </body>
 </html>
